@@ -1,12 +1,10 @@
 package io.github.redstoneparadox.tinkersarsenal.traits;
 
-import c4.conarm.lib.traits.AbstractArmorTrait;
-import io.github.redstoneparadox.tinkersarsenal.traits.armortraits.*;
-import slimeknights.tconstruct.library.TinkerRegistry;
 
 /**
  * Created by RedstoneParadox on 8/16/2018.
  */
+/*
 public class ArsenalArmorTraits {
     public static final AbstractArmorTrait ANTI_CORROSIVE = new ArmorTraitAntiCorrosive();
     public static final AbstractArmorTrait CRUMPLING = new ArmorTraitCrumpling();
@@ -23,4 +21,4 @@ public class ArsenalArmorTraits {
         TinkerRegistry.addTrait(RESILIENCE);
         TinkerRegistry.addTrait(RIGIDITY);
     }
-}
+}*/

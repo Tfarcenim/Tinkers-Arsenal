@@ -1,6 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.materials;
 
-import c4.conarm.common.armor.traits.ArmorTraits;
+/*import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.ArmorMaterialType;
 import c4.conarm.lib.materials.CoreMaterialStats;
 import c4.conarm.lib.materials.PlatesMaterialStats;
@@ -175,4 +175,4 @@ public class ArsenalArmorMaterials {
             return null;
         }
     }
-}
+}*/

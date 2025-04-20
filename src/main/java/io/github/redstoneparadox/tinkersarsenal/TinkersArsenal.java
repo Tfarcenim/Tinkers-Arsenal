@@ -1,57 +1,49 @@
 package io.github.redstoneparadox.tinkersarsenal;
 
-import io.github.redstoneparadox.tinkersarsenal.proxy.CommonProxy;
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
+import io.github.redstoneparadox.tinkersarsenal.client.TinkersArsenalClient;
+import io.github.redstoneparadox.tinkersarsenal.entities.ArsenalEntities;
+import io.github.redstoneparadox.tinkersarsenal.events.ArsenalRegistryEvents;
+import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
+import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(
-        modid = Tags.MOD_ID,
-        name = Tags.MOD_NAME,
-        version = Tags.VERSION,
-        dependencies = "required-after:tconstruct@[1.12.2-2.13.0.183,);" +
-                "after:conarm;" +
-                "after:tinkerscompendium;" +
-                "after:plustic;" +
-                "after:moartinkers;" +
-                "after:thermalfoundation;" +
-                "after:basemetals;" +
-                "after:modernmetals;",
-        useMetadata = true
-)
+@Mod(TinkersArsenal.MOD_ID)
 public class TinkersArsenal {
     public static Logger logger;
 
-    @SidedProxy(clientSide = "io.github.redstoneparadox.tinkersarsenal.proxy.ClientProxy", serverSide = "io.github.redstoneparadox.tinkersarsenal.proxy.ServerProxy")
-    public static CommonProxy proxy;
+    public static final String MOD_ID = "tinkersarsenal";
 
-    /**
-     * This is the instance of your mod as created by Forge. It will never be null.
-     */
-    @Mod.Instance(Tags.MOD_ID)
-    public static TinkersArsenal INSTANCE;
+    public TinkersArsenal() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(this::register);
+        MinecraftForge.EVENT_BUS.register(new ArsenalRegistryEvents());
+        ArsenalToolTraits.initToolTraits();
+        ArsenalToolMaterials.initToolMaterials();
 
-    /**
-     * This is the first initialization event. Register tile entities here.
-     * The registry events below will have fired prior to entry to this method.
-     */
-    @Mod.EventHandler
-    public void preinit(FMLPreInitializationEvent event) {
-        logger = event.getModLog();
-        ConfigManager.sync(Tags.MOD_ID, Config.Type.INSTANCE);
-        proxy.preInit(event);
+        if (FMLEnvironment.dist.isClient()) {
+            TinkersArsenalClient.init(bus);
+        }
+
+        if (ModList.get().isLoaded("conarm")) {
+            //  ArsenalArmorTraits.initArmorTraits();
+            // ArsenalArmorMaterials.initArmorMaterials();
+        }
+
+        ArsenalEntities.init();
     }
 
-    /**
-     * This is the second initialization event. Register custom recipes
-     */
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
+
+    void register(RegisterEvent event) {
+        IForgeRegistry<Item> registry = event.getRegistry();
+        ArsenalTools.initToolParts(registry);
     }
 
     /**
