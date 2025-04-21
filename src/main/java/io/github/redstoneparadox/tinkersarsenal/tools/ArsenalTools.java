@@ -1,78 +1,71 @@
 package io.github.redstoneparadox.tinkersarsenal.tools;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
-import io.github.redstoneparadox.tinkersarsenal.geometry.Vector2;
+import io.github.redstoneparadox.tinkersarsenal.init.TAToolDefinitions;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.AmmoBoomstickShot;
-import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstick;
-import io.github.redstoneparadox.tinkersarsenal.tools.utility.ToolShears;
+import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
+import io.github.redstoneparadox.tinkersarsenal.tools.utility.ToolShearsItem;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.registries.IForgeRegistry;
-import slimeknights.tconstruct.library.TinkerRegistry;
-import slimeknights.tconstruct.library.TinkerRegistryClient;
-import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
-import slimeknights.tconstruct.library.materials.Material;
-import slimeknights.tconstruct.library.tinkering.PartMaterialType;
-import slimeknights.tconstruct.library.tools.Pattern;
-import slimeknights.tconstruct.library.tools.ToolCore;
-import slimeknights.tconstruct.library.tools.ToolPart;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.RegisterEvent;
+import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
-import slimeknights.tconstruct.tools.TinkerTools;
+import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.LimbMaterialStats;
 
 /**
  * Created by RedstoneParadox on 7/31/2018.
  */
 
 public class ArsenalTools {
-    public static ToolCore boomstick;
-    public static ToolCore boomstickShot;
-    public static ToolCore shears;
-
-    public static ToolPart boomstickBarrel;
-    public static ToolPart boomstickHandle;
-    public static ToolPart bayonet;
-    public static ToolPart bullet;
-    public static ToolPart bulletShell;
-
-    private static final List<ToolCore> TOOLS = new ArrayList<>();
+    private static final List<Item> TOOLS = new ArrayList<>();
     private static final List<IToolPart> TOOL_PARTS = new ArrayList<>();
 
-    public static void initToolParts(IForgeRegistry<Item> registry) {
-        boomstickBarrel = registerToolPart(boomstickBarrel, "boomstick_barrel", 3, registry);
-        boomstickHandle = registerToolPart(boomstickHandle, "boomstick_handle", 2, registry);
-        bayonet = registerToolPart(bayonet, "bayonet", 2, registry);
-        bullet = registerToolPart(bullet, "bullet", 1, registry);
-        bulletShell = registerToolPart(bulletShell, "bullet_shell", 1, registry);
+    public static final Item boomstick = new ToolBoomstickItem(new Item.Properties().stacksTo(1), TAToolDefinitions.BOOMSTICK);//needs forge
+    public static Item boomstickShot= new AmmoBoomstickShot(new Item.Properties());//needs forge
+    public static Item shears = new ToolShearsItem(new Item.Properties());
 
-        initTools(registry);
+    //   (PartMaterialType.handle(ArsenalTools.boomstickHandle),
+    //          PartMaterialType.bow(ArsenalTools.boomstickBarrel),
+    //          PartMaterialType.head(ArsenalTools.bayonet));
+
+    public static final Item boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
+    public static final Item boomstickHandle = registerToolPart(HandleMaterialStats.ID);//cost 2
+    public static final Item bayonet = registerToolPart(HeadMaterialStats.ID); //cost 2
+    public static final Item bullet = registerToolPart(HandleMaterialStats.ID);
+    public static final Item bulletShell = registerToolPart(HandleMaterialStats.ID);
+
+
+
+
+    public static void initToolParts(RegisterEvent event) {
+       event.register(Registries.ITEM,TinkersArsenal.id("boomstick_handle"),() -> boomstickHandle);
+        event.register(Registries.ITEM,TinkersArsenal.id("bayonet"), () -> bayonet);
+        event.register(Registries.ITEM,TinkersArsenal.id("bullet"),() -> bullet );
+        event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bulletShell);
+
+        event.register(Registries.ITEM,TinkersArsenal.id("boomstick"),() -> boomstick);
+        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_shot"),() -> boomstick);
+        event.register(Registries.ITEM,TinkersArsenal.id("shears"),() -> boomstick);
     }
 
-    protected static ToolPart registerToolPart(ToolPart part, String name, int cost, IForgeRegistry<Item> registry) {
-        part = new ToolPart(Material.VALUE_Ingot * cost);
-        part.setRegistryName(name).setTranslationKey(name);
-        registry.register(part);
-        TinkerRegistry.registerToolPart(part);
-        TinkersArsenal.proxy.registerToolPartModel(part);
+    protected static ToolPartItem registerToolPart(MaterialStatsId materialStatsId) {
+        ToolPartItem part = new ToolPartItem(new Item.Properties(), materialStatsId);//Material.VALUE_Ingot * cost);
+        //part.setRegistryName(name).setTranslationKey(name);
+        //registry.register(part);
+        //TinkerRegistry.registerToolPart(part);
+        //TinkersArsenal.proxy.registerToolPartModel(part);
         TOOL_PARTS.add(part);
 
         return part;
     }
 
-    public static void initTools(IForgeRegistry<Item> registry) {
-        boomstick = new ToolBoomstick();
-        boomstickShot = new AmmoBoomstickShot();
-        shears = new ToolShears();
-
-        registerTool(boomstick, true, registry);
-        registerTool(boomstickShot, true, registry);
-        registerTool(shears, false, registry);
-
-        registerToolBuilding();
-    }
-
-    protected static void registerTool(ToolCore toolCore, boolean forge, IForgeRegistry<Item> registry) {
+    /*protected static void registerTool(ToolCore toolCore, boolean forge, IForgeRegistry<Item> registry) {
         registry.register(toolCore);
         if (forge) {
             TinkerRegistry.registerToolForgeCrafting(toolCore);
@@ -82,10 +75,10 @@ public class ArsenalTools {
         }
         TinkersArsenal.proxy.registerToolModel(toolCore);
         TOOLS.add(toolCore);
-    }
+    }*/
 
     public static void initToolGUIs() {
-        ToolBuildGuiInfo boomstickInfo = new ToolBuildGuiInfo(boomstick);
+        /*ToolBuildGuiInfo boomstickInfo = new ToolBuildGuiInfo(boomstick);
         boomstickInfo.addSlotPosition(32 + 12, 41 + 12);
         boomstickInfo.addSlotPosition(32 - 12, 41 - 12);
         boomstickInfo.addSlotPosition(32 - 12, 41 + 12);
@@ -99,10 +92,10 @@ public class ArsenalTools {
         ToolBuildGuiInfo shearInfo = new ToolBuildGuiInfo(shears);
         shearInfo.addSlotPosition(32 - 12, 41 + 12); // bot left
         shearInfo.addSlotPosition(32 + 12, 41 - 12); // top left
-        TinkerRegistryClient.addToolBuilding(shearInfo);
+        TinkerRegistryClient.addToolBuilding(shearInfo);*/
     }
 
-    protected static void registerToolGUI(ToolCore toolCore, ArrayList<Vector2> vector2s) {
+   /* protected static void registerToolGUI(ToolCore toolCore, ArrayList<Vector2> vector2s) {
         ToolBuildGuiInfo info = new ToolBuildGuiInfo(toolCore);
 
         for (Vector2 vector2 : vector2s) {
@@ -124,5 +117,5 @@ public class ArsenalTools {
                 }
             }
         }
-    }
+    }*/
 }
