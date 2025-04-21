@@ -1,14 +1,17 @@
 package io.github.redstoneparadox.tinkersarsenal.client;
 
-import io.github.redstoneparadox.tinkersarsenal.entities.BoomstickShotEntity;
-import io.github.redstoneparadox.tinkersarsenal.entities.rendering.RenderBoomstickShot;
+import io.github.redstoneparadox.tinkersarsenal.client.rendering.RenderBoomstickShot;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
-import io.github.redstoneparadox.tinkersarsenal.events.ArsenalRenderEvents;
 import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -22,6 +25,7 @@ public class TinkersArsenalClient {
     public static void init(IEventBus bus) {
         bus.addListener(TinkersArsenalClient::setup);
         bus.addListener(TinkersArsenalClient::renderers);
+        MinecraftForge.EVENT_BUS.addListener(TinkersArsenalClient::renderPlayer);
     }
 
     protected static final ResourceLocation PROPERTY_IS_LOADED = new ResourceLocation("loaded");
@@ -31,8 +35,6 @@ public class TinkersArsenalClient {
     }
 
     static void setup(FMLClientSetupEvent event) {
-        ArsenalEntities.initModels();
-        MinecraftForge.EVENT_BUS.register(new ArsenalRenderEvents());
         ArsenalTools.initToolGUIs();
 
         ItemProperties.register(ArsenalTools.boomstick,PROPERTY_IS_LOADED,(pStack, pLevel, pEntity, pSeed) -> {
@@ -56,4 +58,28 @@ public class TinkersArsenalClient {
     //public void registerToolModel(ToolCore toolCore) {
    //     ModelRegisterUtil.registerToolModel(toolCore);
    // }
+
+    public static void renderPlayer(RenderPlayerEvent.Pre event) {
+
+        Player player = event.getEntity();
+        InteractionHand right = InteractionHand.MAIN_HAND;
+        InteractionHand left = InteractionHand.OFF_HAND;
+
+        //todo check arm?
+
+        if (isCarryingLoadedBoomstick(player, right)) {
+            (event.getRenderer().getModel()).rightArmPose = HumanoidModel.ArmPose.BOW_AND_ARROW;
+        } else if (isCarryingLoadedBoomstick(player, left)) {
+            (event.getRenderer().getModel()).leftArmPose = HumanoidModel.ArmPose.BOW_AND_ARROW;
+        }
+    }
+
+    private static boolean isCarryingLoadedBoomstick(Player player, InteractionHand hand) {
+        if (player.getItemInHand(hand).getItem() == ArsenalTools.boomstick) {
+            return ToolBoomstickItem.isLoaded(player.getItemInHand(hand));
+        }
+        else {
+            return false;
+        }
+    }
 }

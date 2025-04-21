@@ -1,14 +1,14 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.tooltraits;
 
-import net.minecraftforge.common.MinecraftForge;
-import slimeknights.tconstruct.library.traits.AbstractTrait;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
 /**
  * Created by RedstoneParadox on 8/29/2018.
  */
-public class TraitMissingno extends AbstractTrait {
+public class TraitMissingno extends Modifier {
+
+    //"missingno", 0x000000
     public TraitMissingno() {
-        super("missingno", 0x000000);
-        MinecraftForge.EVENT_BUS.register(this);
+        super();
     }
 }

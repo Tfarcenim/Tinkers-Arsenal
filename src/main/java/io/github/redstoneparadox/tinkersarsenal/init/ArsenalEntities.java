@@ -1,7 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.init;
 
 import io.github.redstoneparadox.tinkersarsenal.entities.BoomstickShotEntity;
-import io.github.redstoneparadox.tinkersarsenal.entities.rendering.RenderBoomstickShot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
@@ -13,9 +12,4 @@ public class ArsenalEntities {
     public static final EntityType<BoomstickShotEntity> BOOMSTICK_SHOT = EntityType.Builder.<BoomstickShotEntity>of(BoomstickShotEntity::new, MobCategory.MISC)
             .updateInterval(1)
             .build("");
-
-
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-    }
 }

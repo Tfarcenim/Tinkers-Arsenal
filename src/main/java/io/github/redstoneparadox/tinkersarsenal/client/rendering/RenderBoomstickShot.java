@@ -1,4 +1,4 @@
-package io.github.redstoneparadox.tinkersarsenal.entities.rendering;
+package io.github.redstoneparadox.tinkersarsenal.client.rendering;
 
 import io.github.redstoneparadox.tinkersarsenal.entities.BoomstickShotEntity;
 import net.minecraft.client.renderer.entity.ArrowRenderer;

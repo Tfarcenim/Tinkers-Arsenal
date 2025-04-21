@@ -1,18 +1,17 @@
 package io.github.redstoneparadox.tinkersarsenal.materials;
 
+import io.github.redstoneparadox.tinkersarsenal.ModIntegration;
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
 import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalConfig;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
 import java.util.ArrayList;
 import java.util.Objects;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.oredict.OreDictionary;
+
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.Fluid;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.materials.definition.Material;
@@ -132,8 +131,8 @@ public class ArsenalToolMaterials {
             TinkerRegistry.addMaterial(invar);
         }
 
-        if (Loader.isModLoaded("thermalfoundation")) {
-            Item materialItem = Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalfoundation:material")));
+        if (ModIntegration.thermalfoundation.loaded) {
+            Item materialItem = BuiltInRegistries.ITEM.get(new ResourceLocation("thermalfoundation","material"));
 
             if (isRegistrable("blizz_rod")) {
                 ArsenalMaterial blizz = new ArsenalMaterial("blizz_rod", 0xC6F2F2);

@@ -1,16 +1,14 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.tooltraits;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import slimeknights.tconstruct.library.traits.AbstractProjectileTrait;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
-public class TraitHardHitting extends AbstractProjectileTrait {
+public class TraitHardHitting extends Modifier {
     public TraitHardHitting() {
-        super("hard_hitting", 0x554B45);
+       // super("hard_hitting", 0x554B45);
     }
 
-    @Override
+    /*@Override
     public float knockBack(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float knockback, float newKnockback, boolean isCritical) {
         return newKnockback * 2;
-    }
+    }*/
 }

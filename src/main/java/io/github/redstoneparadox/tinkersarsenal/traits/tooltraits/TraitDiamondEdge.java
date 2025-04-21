@@ -4,19 +4,19 @@ import java.util.Random;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 /**
  * Created by RedstoneParadox on 7/29/2018.
  */
-public class TraitDiamondEdge extends AbstractTrait {
+public class TraitDiamondEdge extends Modifier {
 
+    //        super("diamond_edge", 0x33ebcb);
     public TraitDiamondEdge() {
-        super("diamond_edge", 0x33ebcb);
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @Override
+   /* @Override
     public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
         int armor = target.getTotalArmorValue();
 
@@ -24,6 +24,7 @@ public class TraitDiamondEdge extends AbstractTrait {
         add more than 20 armortraits points and the code relies on the 20 point maximum which I don't
          know how to fix*/
 
+    /*
         if (armor > 0) {
             Random pierceChance = new Random();
 
@@ -35,6 +36,7 @@ public class TraitDiamondEdge extends AbstractTrait {
                 //The damage is then increased so the original damage gets through...but not before being divided in two for balance!
                 newDamage = (damage/damagePercentage)/2;
             }*/
+    /*
             if ((pierceChance.nextInt(20) + 1) == 1) {
                 newDamage = damage * 1.5f;
             }
@@ -46,7 +48,7 @@ public class TraitDiamondEdge extends AbstractTrait {
             newDamage = damage;
         }
         return super.damage(tool, player, target, damage, newDamage, isCritical);
-    }
+    }*/
 
     @Override
     public int getPriority() {

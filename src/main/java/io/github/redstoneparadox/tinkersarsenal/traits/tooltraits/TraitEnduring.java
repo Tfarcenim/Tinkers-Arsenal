@@ -1,19 +1,15 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.tooltraits;
 
-import java.util.Random;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
-import slimeknights.tconstruct.library.traits.AbstractTrait;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
-public class TraitEnduring extends AbstractTrait {
+public class TraitEnduring extends Modifier {
+
+    //"enduring", 0x7E8D88
     public TraitEnduring() {
-        super("enduring", 0x7E8D88);
+        super();
     }
 
-    @Override
+   /* @Override
     public void apply(NBTTagCompound root) {
         super.apply(root);
 
@@ -73,5 +69,5 @@ public class TraitEnduring extends AbstractTrait {
         }
 
         return newDamage;
-    }
+    }*/
 }

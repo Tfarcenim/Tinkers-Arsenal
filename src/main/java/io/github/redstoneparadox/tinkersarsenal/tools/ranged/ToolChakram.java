@@ -1,20 +1,16 @@
 package io.github.redstoneparadox.tinkersarsenal.tools.ranged;
 
-import java.util.List;
-import javax.annotation.Nonnull;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import slimeknights.tconstruct.library.entity.EntityProjectileBase;
-import slimeknights.tconstruct.library.materials.Material;
-import slimeknights.tconstruct.library.tools.ProjectileNBT;
-import slimeknights.tconstruct.library.tools.ranged.ProjectileCore;
+import net.minecraft.world.item.ArrowItem;
 
 /**
  * Created by RedstoneParadox on 9/21/2018.
  */
-public class ToolChakram extends ProjectileCore {
-    @Override
+public class ToolChakram extends ArrowItem {
+    public ToolChakram(Properties pProperties) {
+        super(pProperties);
+    }
+
+   /* @Override
     public ProjectileNBT buildTagData(List<Material> materials) {
         return null;
     }
@@ -27,5 +23,5 @@ public class ToolChakram extends ProjectileCore {
     @Override
     public EntityProjectileBase getProjectile(@Nonnull ItemStack stack, @Nonnull ItemStack launcher, World world, EntityPlayer player, float speed, float inaccuracy, float power, boolean usedAmmo) {
         return null;
-    }
+    }*/
 }

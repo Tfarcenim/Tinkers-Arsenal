@@ -1,21 +1,17 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.tooltraits;
 
-import java.util.Random;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import slimeknights.tconstruct.library.traits.AbstractTrait;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
 /**
  * Created by RedstoneParadox on 8/15/2018.
  */
-public class TraitResilience extends AbstractTrait{
+public class TraitResilience extends Modifier {
 
+    //        super("resilience", 0x33ebcb);
     public TraitResilience() {
-        super("resilience", 0x33ebcb);
     }
 
-    @Override
+    /*@Override
     public int onToolDamage(ItemStack tool, int damage, int newDamage, EntityLivingBase entity) {
         if(entity.getEntityWorld().isRemote) {
             return 0;
@@ -37,5 +33,5 @@ public class TraitResilience extends AbstractTrait{
             newDamage = damage;
             return newDamage;
         }
-    }
+    }*/
 }
