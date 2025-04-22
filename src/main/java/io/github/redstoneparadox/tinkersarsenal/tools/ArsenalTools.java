@@ -44,6 +44,7 @@ public class ArsenalTools {
 
 
     public static void initToolParts(RegisterEvent event) {
+        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_barrel"),() -> boomstickBarrel);
        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_handle"),() -> boomstickHandle);
         event.register(Registries.ITEM,TinkersArsenal.id("bayonet"), () -> bayonet);
         event.register(Registries.ITEM,TinkersArsenal.id("bullet"),() -> bullet );

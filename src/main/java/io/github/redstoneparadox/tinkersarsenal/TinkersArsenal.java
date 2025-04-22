@@ -28,7 +28,7 @@ public class TinkersArsenal {
     public static final String MOD_ID = "tinkersarsenal";
 
     public TinkersArsenal() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ArsenalConfig.SERVER_SPEC);
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ArsenalConfig.SERVER_SPEC);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::register);
         bus.addListener(TinkersArsenalDatagen::gather);

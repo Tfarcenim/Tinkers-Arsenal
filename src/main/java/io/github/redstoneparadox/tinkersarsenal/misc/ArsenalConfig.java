@@ -20,14 +20,9 @@ public class ArsenalConfig {
     }
 
 
-    public ForgeConfigSpec.BooleanValue gold;
-
-    public ForgeConfigSpec.BooleanValue diamond;
 
     public ArsenalConfig(ForgeConfigSpec.Builder builder) {
         builder.push("base_category");
-        gold = builder.comment(disableText + "Gold.").define("gold", true);
-        diamond = builder.comment(disableText + "Diamond.").define("diamond", true);
         builder.pop();
     }
 
