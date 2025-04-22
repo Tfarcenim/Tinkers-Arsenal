@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class ArmorTraitEnduring extends AbstractArmorTrait {
+public class ArmorTraitEnduring {
     public ArmorTraitEnduring() {
         super("enduring", 0x7E8D88);
     }

@@ -1,23 +1,14 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.armortraits;
 
-import c4.conarm.lib.traits.AbstractArmorTrait;
-import java.util.Objects;
-import java.util.Random;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
-
 /**
  * Created by RedstoneParadox on 8/17/2018.
  */
-public class ArmorTraitAntiCorrosive extends AbstractArmorTrait {
+public class ArmorTraitAntiCorrosive {
     public ArmorTraitAntiCorrosive() {
-        super("anti_corrosive", 0xeaee57);
+   //     super("anti_corrosive", 0xeaee57);
     }
 
-    @Override
+   /* @Override
     public void onAbilityTick(int level, World world, EntityPlayer player) {
         Random chance = new Random();
 
@@ -40,5 +31,5 @@ public class ArmorTraitAntiCorrosive extends AbstractArmorTrait {
         if (newDuration > 0) {
             player.addPotionEffect(new PotionEffect(potion, newDuration, potionLevel));
         }
-    }
+    }*/
 }

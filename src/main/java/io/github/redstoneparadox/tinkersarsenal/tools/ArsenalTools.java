@@ -50,8 +50,8 @@ public class ArsenalTools {
         event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bulletShell);
 
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick"),() -> boomstick);
-        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_shot"),() -> boomstick);
-        event.register(Registries.ITEM,TinkersArsenal.id("shears"),() -> boomstick);
+        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_shot"),() -> boomstickShot);
+        event.register(Registries.ITEM,TinkersArsenal.id("shears"),() -> shears);
     }
 
     protected static ToolPartItem registerToolPart(MaterialStatsId materialStatsId) {

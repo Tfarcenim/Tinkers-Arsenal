@@ -1,6 +1,7 @@
 package io.github.redstoneparadox.tinkersarsenal;
 
 import io.github.redstoneparadox.tinkersarsenal.client.TinkersArsenalClient;
+import io.github.redstoneparadox.tinkersarsenal.datagen.TinkersArsenalDatagen;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
 import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalConfig;
@@ -30,7 +31,7 @@ public class TinkersArsenal {
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ArsenalConfig.SERVER_SPEC);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::register);
-        ArsenalToolTraits.initToolTraits();
+        bus.addListener(TinkersArsenalDatagen::gather);
         ArsenalToolMaterials.initToolMaterials();
 
         if (FMLEnvironment.dist.isClient()) {

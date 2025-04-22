@@ -4,9 +4,6 @@ import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.IForgeRegistry;
 
 /**
  * Created by RedstoneParadox on 8/3/2018.
@@ -26,11 +23,5 @@ public class ArsenalSounds {
         if(entity instanceof ServerPlayer) {
             //TinkerNetwork.sendPacket(entity, new SPacketSoundEffect(sound, entity.getSoundCategory(), entity.posX, entity.posY, entity.posZ, volume, pitch));
         }
-    }
-
-    @SubscribeEvent
-    public static void registerSoundEvent(RegistryEvent.Register<SoundEvent> event) {
-        IForgeRegistry<SoundEvent> registry = event.getRegistry();
-        registry.register(BOOMSTICK_SHOT);
     }
 }

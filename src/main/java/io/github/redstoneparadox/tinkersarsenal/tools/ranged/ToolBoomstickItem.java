@@ -1,9 +1,5 @@
 package io.github.redstoneparadox.tinkersarsenal.tools.ranged;
 
-import com.google.common.collect.ImmutableList;
-import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalSounds;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
-
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,9 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import slimeknights.tconstruct.common.Sounds;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
-import slimeknights.tconstruct.library.tools.item.ranged.ModifiableBowItem;
 import slimeknights.tconstruct.library.tools.item.ranged.ModifiableCrossbowItem;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 

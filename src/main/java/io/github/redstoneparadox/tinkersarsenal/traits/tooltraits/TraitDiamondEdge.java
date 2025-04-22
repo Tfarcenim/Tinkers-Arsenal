@@ -1,11 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.traits.tooltraits;
 
-import java.util.Random;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import slimeknights.tconstruct.library.modifiers.Modifier;
-import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 /**
  * Created by RedstoneParadox on 7/29/2018.
