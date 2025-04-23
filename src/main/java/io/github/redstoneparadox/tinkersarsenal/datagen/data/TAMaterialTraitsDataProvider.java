@@ -13,7 +13,6 @@ public class TAMaterialTraitsDataProvider extends AbstractMaterialTraitDataProvi
 
     @Override
     protected void addMaterialTraits() {
-        addDefaultTraits(ArsenalToolMaterials.GOLD, ArsenalToolTraits.malleable);
         addDefaultTraits(ArsenalToolMaterials.DIAMOND, ArsenalToolTraits.resilience);
     }
 

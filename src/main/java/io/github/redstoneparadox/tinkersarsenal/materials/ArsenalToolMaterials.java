@@ -7,7 +7,6 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 public class ArsenalToolMaterials {
 
 
-    public static final MaterialId GOLD = id("gold");
     public static final MaterialId DIAMOND = id("diamond");
 
     private static MaterialId id(String name) {

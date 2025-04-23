@@ -14,7 +14,6 @@ public class TAMaterialRenderInfoProvider extends AbstractMaterialRenderInfoProv
 
     @Override
     protected void addMaterialRenderInfo() {
-        buildRenderInfo(ArsenalToolMaterials.GOLD).color(0xeaee57);
         buildRenderInfo(ArsenalToolMaterials.DIAMOND).color(0x33ebcb);
     }
 

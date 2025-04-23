@@ -11,7 +11,6 @@ public class TAMaterialDataProvider extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(ArsenalToolMaterials.GOLD,1,ORDER_GENERAL,true);
         addMaterial(ArsenalToolMaterials.DIAMOND,3,ORDER_GENERAL,true);
     }
 

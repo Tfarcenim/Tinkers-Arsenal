@@ -17,7 +17,7 @@ public class TALangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        addMaterialTranslation(ArsenalToolMaterials.GOLD,"Gold");
+        //addMaterialTranslation(ArsenalToolMaterials.GOLD,"Gold");
         addMaterialTranslation(ArsenalToolMaterials.DIAMOND,"Diamond");
 
         addModifier(ArsenalToolTraits.malleable,"Malleable","placeholder","§oMore Malleable = More Modifiers!§r\\nThis feels like a lazy copy of some other material...");
