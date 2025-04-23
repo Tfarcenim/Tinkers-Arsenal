@@ -1,4 +1,4 @@
-package io.github.redstoneparadox.tinkersarsenal.datagen;
+package io.github.redstoneparadox.tinkersarsenal.datagen.data;
 
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
 import net.minecraft.data.PackOutput;

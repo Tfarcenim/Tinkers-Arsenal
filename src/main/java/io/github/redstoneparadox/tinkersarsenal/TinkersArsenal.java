@@ -4,22 +4,22 @@ import io.github.redstoneparadox.tinkersarsenal.client.TinkersArsenalClient;
 import io.github.redstoneparadox.tinkersarsenal.datagen.TinkersArsenalDatagen;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
-import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalConfig;
 import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalSounds;
 import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
+import io.github.redstoneparadox.tinkersarsenal.traits.tooltraits.ResilienceModifier;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.Logger;
+import slimeknights.tconstruct.library.modifiers.ModifierManager;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 @Mod(TinkersArsenal.MOD_ID)
 public class TinkersArsenal {
@@ -32,6 +32,7 @@ public class TinkersArsenal {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::register);
         bus.addListener(TinkersArsenalDatagen::gather);
+        bus.addListener(this::modifierRegister);
         ArsenalToolMaterials.initToolMaterials();
 
         if (FMLEnvironment.dist.isClient()) {
@@ -44,6 +45,9 @@ public class TinkersArsenal {
         }
     }
 
+    void modifierRegister(ModifierManager.ModifierRegistrationEvent event) {
+        event.registerStatic(ArsenalToolTraits.resilience,new ResilienceModifier());
+    }
 
     void register(RegisterEvent event) {
         if (event.getVanillaRegistry() == (Registry<?>)BuiltInRegistries.ITEM) {

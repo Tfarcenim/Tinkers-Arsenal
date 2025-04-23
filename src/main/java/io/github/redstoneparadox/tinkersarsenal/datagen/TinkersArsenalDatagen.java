@@ -1,5 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.datagen;
 
+import io.github.redstoneparadox.tinkersarsenal.datagen.data.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -15,10 +16,14 @@ public class TinkersArsenalDatagen {
         AbstractMaterialDataProvider abstractMaterialDataProvider = new TAMaterialDataProvider(output);
         generator.addProvider(event.includeServer(),abstractMaterialDataProvider);
         generator.addProvider(event.includeServer(),new TAMaterialStatsDataProvider(output,abstractMaterialDataProvider));
+        generator.addProvider(event.includeServer(),new TAMaterialTraitsDataProvider(output,abstractMaterialDataProvider));
 
         AbstractMaterialSpriteProvider abstractMaterialSpriteProvider = new TAMaterialSpriteProvider();
         generator.addProvider(event.includeClient(),new TAMaterialRenderInfoProvider(output,abstractMaterialSpriteProvider,helper));
 
         generator.addProvider(event.includeClient(),new TALangProvider(output));
+        generator.addProvider(event.includeServer(),new TAModifierProvider(output));
+
+        generator.addProvider(event.includeServer(),new TARecipeProvider(output));
     }
 }
