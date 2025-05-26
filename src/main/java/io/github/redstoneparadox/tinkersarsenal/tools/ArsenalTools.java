@@ -26,28 +26,28 @@ public class ArsenalTools {
     private static final List<Item> TOOLS = new ArrayList<>();
     private static final List<IToolPart> TOOL_PARTS = new ArrayList<>();
 
-    public static final Item boomstick = new ToolBoomstickItem(new Item.Properties().stacksTo(1), TAToolDefinitions.BOOMSTICK);//needs forge
-    public static Item boomstickShot= new AmmoBoomstickShot(new Item.Properties());//needs forge
-    public static Item shears = new ToolShearsItem(new Item.Properties());
+    public static final ToolBoomstickItem boomstick = new ToolBoomstickItem(new Item.Properties().stacksTo(1), TAToolDefinitions.BOOMSTICK);//needs forge
+    public static AmmoBoomstickShot boomstickShot= new AmmoBoomstickShot(new Item.Properties());//needs forge
+    public static ToolShearsItem shears = new ToolShearsItem(new Item.Properties().stacksTo(1));
 
     //   (PartMaterialType.handle(ArsenalTools.boomstickHandle),
     //          PartMaterialType.bow(ArsenalTools.boomstickBarrel),
     //          PartMaterialType.head(ArsenalTools.bayonet));
 
-    public static final Item boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
-    public static final Item boomstickHandle = registerToolPart(HandleMaterialStats.ID);//cost 2
-    public static final Item bayonet = registerToolPart(HeadMaterialStats.ID); //cost 2
-    public static final Item bullet = registerToolPart(HandleMaterialStats.ID);
-    public static final Item bulletShell = registerToolPart(HandleMaterialStats.ID);
+    public static final ToolPartItem boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
+    public static final ToolPartItem boomstick_stock = registerToolPart(HandleMaterialStats.ID);//cost 2
+    public static final ToolPartItem bayonet = registerToolPart(HeadMaterialStats.ID); //cost 2
+    public static final ToolPartItem bullet_head = registerToolPart(HandleMaterialStats.ID);
+    public static final ToolPartItem bulletShell = registerToolPart(HandleMaterialStats.ID);
 
 
 
 
     public static void initToolParts(RegisterEvent event) {
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick_barrel"),() -> boomstickBarrel);
-       event.register(Registries.ITEM,TinkersArsenal.id("boomstick_handle"),() -> boomstickHandle);
+       event.register(Registries.ITEM,TinkersArsenal.id("boomstick_stock"),() -> boomstick_stock);
         event.register(Registries.ITEM,TinkersArsenal.id("bayonet"), () -> bayonet);
-        event.register(Registries.ITEM,TinkersArsenal.id("bullet"),() -> bullet );
+        event.register(Registries.ITEM,TinkersArsenal.id("bullet_head"),() -> bullet_head);
         event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bulletShell);
 
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick"),() -> boomstick);

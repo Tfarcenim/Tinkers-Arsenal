@@ -14,6 +14,7 @@ public class TAModifierProvider extends AbstractModifierProvider {
     @Override
     protected void addModifiers() {
         buildModifier(ArsenalToolTraits.resilience).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(ArsenalToolTraits.diamond_edge).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

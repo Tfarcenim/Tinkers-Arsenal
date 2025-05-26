@@ -9,11 +9,12 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
  * Created by RedstoneParadox on 7/29/2018.
  */
 public class ArsenalToolTraits {
-    public static final Modifier DIAMOND_EDGE = new TraitDiamondEdge();
+    public static final Modifier DIAMOND_EDGE = new DiamondEdgeModifier();
     public static final Modifier ENDURING = new TraitEnduring();
     public static final ModifierId malleable = new ModifierId(TinkersArsenal.id("malleable"));//0xdc7613
     public static final Modifier MISSINGNO = new TraitMissingno();
     public static final ModifierId resilience = new ModifierId(TinkersArsenal.id("resilience"));
+    public static final ModifierId diamond_edge = new ModifierId(TinkersArsenal.id("diamond_edge"));
 
     public static final Modifier THERMALLY_ACTIVE_1 = new TraitThermallyActive(1);
     public static final Modifier THERMALLY_ACTIVE_2 = new TraitThermallyActive(2);

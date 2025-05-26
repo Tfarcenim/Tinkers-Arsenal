@@ -1,0 +1,37 @@
+{
+  "icon": {
+    "item": "tinkersarsenal:boomstick",
+    "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+  },
+  "input_slots": [
+    {
+      "filter": {
+        "item": "tinkersarsenal:boomstick_barrel"
+      },
+      "icon": "tinkersarsenal:boomstick_barrel",
+      "translation_key": "item.tinkersarsenal.boomstick_barrel",
+      "x": 10,
+      "y": 20
+    },
+    {
+      "filter": {
+        "item": "tinkersarsenal:boomstick_stock"
+      },
+      "icon": "tinkersarsenal:boomstick_stock",
+      "translation_key": "item.tinkersarsenal.boomstick_stock",
+      "x": 46,
+      "y": 56
+    },
+    {
+      "filter": {
+        "item": "tinkersarsenal:bayonet"
+      },
+      "icon": "tinkersarsenal:bayonet",
+      "translation_key": "item.tinkersarsenal.bayonet",
+      "x": 28,
+      "y": 38
+    }
+  ],
+  "sortIndex": 8,
+  "translation_key": "item.tinkersarsenal.boomstick"
+}
