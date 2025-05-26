@@ -1,7 +1,10 @@
 {
   "item.tinkersarsenal.bayonet": "Bayonet",
+  "item.tinkersarsenal.boomstick": "Boomstick",
   "item.tinkersarsenal.boomstick_barrel": "Boomstick Barrel",
+  "item.tinkersarsenal.boomstick_shot": "Boomstick Shot",
   "item.tinkersarsenal.boomstick_stock": "Boomstick Stock",
+  "item.tinkersarsenal.shears": "Shears",
   "material.tinkersarsenal.diamond": "Diamond",
   "modifier.tinkersarsenal.diamond_edge": "Diamond Edge",
   "modifier.tinkersarsenal.diamond_edge.description": "Â§oSo sharp!Â§r\\nCan better cut through armor if you hit it at just the right angle.",

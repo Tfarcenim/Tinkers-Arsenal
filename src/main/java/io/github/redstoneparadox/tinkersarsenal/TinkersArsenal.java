@@ -22,8 +22,11 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.Logger;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
+import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
+import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,19 +72,27 @@ public class TinkersArsenal {
     }
 
     void creativeTabs(BuildCreativeModeTabContentsEvent event) {
+
+        Consumer<ItemStack> consumer = event::accept;
+
         if (event.getTab() == TinkerToolParts.tabToolParts.get()) {
-            List<ItemStack> stacks = new ArrayList<>();
-
-            Consumer<ItemStack> adder = stacks::add;
-            ArsenalItems.boomstick_stock.addVariants(adder,"");
-            ArsenalItems.boomstickBarrel.addVariants(adder,"");
-            ArsenalItems.bayonet.addVariants(adder,"");
-            ArsenalItems.bulletShell.addVariants(adder,"");
-            ArsenalItems.bullet_head.addVariants(adder,"");
-
-            stacks.forEach(event::accept);
+            ArsenalItems.boomstick_stock.addVariants(consumer,"");
+            ArsenalItems.boomstickBarrel.addVariants(consumer,"");
+            ArsenalItems.bayonet.addVariants(consumer,"");
+            ArsenalItems.bulletShell.addVariants(consumer,"");
+            ArsenalItems.bullet_head.addVariants(consumer,"");
+        }
+        if (event.getTab() == TinkerTools.tabTools.get()) {
+            acceptTool(consumer,ArsenalItems.boomstick);
+            acceptTool(consumer,ArsenalItems.shears);
+            acceptTool(consumer,ArsenalItems.boomstickShot);
         }
     }
+
+    private static void acceptTool(Consumer<ItemStack> output, IModifiable tool) {
+        ToolBuildHandler.addVariants(output, tool, "");
+    }
+
     /** Adds a tool part to the tab */
     private static void accept(Consumer<ItemStack> output, Supplier<? extends IMaterialItem> item) {
         item.get().addVariants(output, "");

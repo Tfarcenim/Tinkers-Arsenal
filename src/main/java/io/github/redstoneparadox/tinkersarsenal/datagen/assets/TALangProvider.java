@@ -25,6 +25,10 @@ public class TALangProvider extends LanguageProvider {
         add(ArsenalItems.boomstick_stock,"Boomstick Stock");
         add(ArsenalItems.boomstickBarrel,"Boomstick Barrel");
         add(ArsenalItems.bayonet,"Bayonet");
+
+        add(ArsenalItems.boomstick,"Boomstick");
+        add(ArsenalItems.boomstickShot,"Boomstick Shot");
+        add(ArsenalItems.shears,"Shears");
     }
 
     void addMaterialTranslation(MaterialVariantId id,String text) {
