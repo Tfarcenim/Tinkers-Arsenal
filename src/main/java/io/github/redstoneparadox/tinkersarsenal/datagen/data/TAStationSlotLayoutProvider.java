@@ -1,6 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.datagen.data;
 
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;
@@ -12,23 +12,23 @@ public class TAStationSlotLayoutProvider extends AbstractStationSlotLayoutProvid
 
     @Override
     protected void addLayouts() {
-        defineModifiable(ArsenalTools.shears)
+        defineModifiable(ArsenalItems.shears)
                 .sortIndex(SORT_HARVEST)
                 .addInputItem(TinkerToolParts.toolBinding,    53, 22)
                 .addInputItem(TinkerToolParts.smallBlade, 33, 42)
                 .build();
 
-        defineModifiable(ArsenalTools.boomstick)
+        defineModifiable(ArsenalItems.boomstick)
                 .sortIndex(SORT_RANGED)
-                .addInputItem(ArsenalTools.boomstickBarrel,   10, 20)
-                .addInputItem(ArsenalTools.boomstick_stock,   46, 56)
-                .addInputItem(ArsenalTools.bayonet, 28, 38)
+                .addInputItem(ArsenalItems.boomstickBarrel,   10, 20)
+                .addInputItem(ArsenalItems.boomstick_stock,   46, 56)
+                .addInputItem(ArsenalItems.bayonet, 28, 38)
                 .build();
 
-        defineModifiable(ArsenalTools.boomstickShot)
+        defineModifiable(ArsenalItems.boomstickShot)
                 .sortIndex(SORT_RANGED)
-                .addInputItem(ArsenalTools.bullet_head,   10, 20)
-                .addInputItem(ArsenalTools.bulletShell,   46, 56)
+                .addInputItem(ArsenalItems.bullet_head,   10, 20)
+                .addInputItem(ArsenalItems.bulletShell,   46, 56)
                 .build();
     }
 

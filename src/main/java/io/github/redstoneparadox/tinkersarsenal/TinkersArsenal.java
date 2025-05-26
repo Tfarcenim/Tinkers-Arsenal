@@ -5,7 +5,7 @@ import io.github.redstoneparadox.tinkersarsenal.datagen.TinkersArsenalDatagen;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
 import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalSounds;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
 import io.github.redstoneparadox.tinkersarsenal.traits.tooltraits.ResilienceModifier;
 import io.github.redstoneparadox.tinkersarsenal.traits.tooltraits.DiamondEdgeModifier;
@@ -62,7 +62,7 @@ public class TinkersArsenal {
 
     void register(RegisterEvent event) {
         if (event.getVanillaRegistry() == (Registry<?>)BuiltInRegistries.ITEM) {
-            ArsenalTools.initToolParts(event);
+            ArsenalItems.initToolParts(event);
         }
         event.register(Registries.ENTITY_TYPE,id("boomstick_shot"),() -> ArsenalEntities.BOOMSTICK_SHOT);
         event.register(Registries.SOUND_EVENT,id("boomstick_shot"),() -> ArsenalSounds.BOOMSTICK_SHOT);
@@ -73,11 +73,11 @@ public class TinkersArsenal {
             List<ItemStack> stacks = new ArrayList<>();
 
             Consumer<ItemStack> adder = stacks::add;
-            ArsenalTools.boomstick_stock.addVariants(adder,"");
-            ArsenalTools.boomstickBarrel.addVariants(adder,"");
-            ArsenalTools.bayonet.addVariants(adder,"");
-            ArsenalTools.bulletShell.addVariants(adder,"");
-            ArsenalTools.bullet_head.addVariants(adder,"");
+            ArsenalItems.boomstick_stock.addVariants(adder,"");
+            ArsenalItems.boomstickBarrel.addVariants(adder,"");
+            ArsenalItems.bayonet.addVariants(adder,"");
+            ArsenalItems.bulletShell.addVariants(adder,"");
+            ArsenalItems.bullet_head.addVariants(adder,"");
 
             stacks.forEach(event::accept);
         }

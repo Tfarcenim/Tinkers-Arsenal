@@ -2,7 +2,7 @@ package io.github.redstoneparadox.tinkersarsenal.datagen.data;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
 import io.github.redstoneparadox.tinkersarsenal.init.TAToolDefinitions;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.materials.RandomMaterial;
@@ -33,9 +33,9 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
         define(TAToolDefinitions.BOOMSTICK)
                 // parts
                 .module(PartStatsModule.parts()
-                        .part(ArsenalTools.boomstick_stock)
-                        .part(ArsenalTools.boomstickBarrel)
-                        .part(ArsenalTools.bayonet).build())
+                        .part(ArsenalItems.boomstick_stock)
+                        .part(ArsenalItems.boomstickBarrel)
+                        .part(ArsenalItems.bayonet).build())
                 .module(defaultThreeParts)
                 // stats
                 .module(new SetStatsModule(StatsNBT.builder()
@@ -49,8 +49,8 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
         define(TAToolDefinitions.BOOMSTICK_SHOT)
                 // parts
                 .module(PartStatsModule.parts()
-                        .part(ArsenalTools.bulletShell)
-                        .part(ArsenalTools.bullet_head).build())
+                        .part(ArsenalItems.bulletShell)
+                        .part(ArsenalItems.bullet_head).build())
                 .module(defaultTwoParts)
                 // stats
                 .module(new SetStatsModule(StatsNBT.builder()

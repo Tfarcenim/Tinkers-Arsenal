@@ -1,7 +1,7 @@
 package io.github.redstoneparadox.tinkersarsenal.datagen.data;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -21,19 +21,19 @@ public class TAItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
-        tag(Tags.Items.SHEARS).add(ArsenalTools.shears);
+        tag(Tags.Items.SHEARS).add(ArsenalItems.shears);
 
-        tag(TinkerTags.Items.BONUS_SLOTS).add(ArsenalTools.boomstick,ArsenalTools.boomstickShot,ArsenalTools.shears);
+        tag(TinkerTags.Items.BONUS_SLOTS).add(ArsenalItems.boomstick, ArsenalItems.boomstickShot, ArsenalItems.shears);
 
-        tag(TinkerTags.Items.DURABILITY).add(ArsenalTools.boomstick,ArsenalTools.shears);
-        tag(TinkerTags.Items.HARVEST_PRIMARY).add(ArsenalTools.shears);
-        tag(TinkerTags.Items.INTERACTABLE_RIGHT).add(ArsenalTools.shears);
+        tag(TinkerTags.Items.DURABILITY).add(ArsenalItems.boomstick, ArsenalItems.shears);
+        tag(TinkerTags.Items.HARVEST_PRIMARY).add(ArsenalItems.shears);
+        tag(TinkerTags.Items.INTERACTABLE_RIGHT).add(ArsenalItems.shears);
 
 
-        tag(TinkerTags.Items.MULTIPART_TOOL).add(ArsenalTools.shears,ArsenalTools.boomstick,ArsenalTools.boomstickShot);
-        tag(TinkerTags.Items.RANGED).add(ArsenalTools.boomstick);
-        tag(TinkerTags.Items.SMALL_TOOLS).add(ArsenalTools.shears);
-        tag(TinkerTags.Items.TOOL_PARTS).add(ArsenalTools.bayonet,ArsenalTools.boomstickBarrel,ArsenalTools.boomstick_stock,
-                ArsenalTools.bullet_head,ArsenalTools.bulletShell);
+        tag(TinkerTags.Items.MULTIPART_TOOL).add(ArsenalItems.shears, ArsenalItems.boomstick, ArsenalItems.boomstickShot);
+        tag(TinkerTags.Items.RANGED).add(ArsenalItems.boomstick);
+        tag(TinkerTags.Items.SMALL_TOOLS).add(ArsenalItems.shears);
+        tag(TinkerTags.Items.TOOL_PARTS).add(ArsenalItems.bayonet, ArsenalItems.boomstickBarrel, ArsenalItems.boomstick_stock,
+                ArsenalItems.bullet_head, ArsenalItems.bulletShell);
     }
 }

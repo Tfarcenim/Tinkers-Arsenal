@@ -22,9 +22,9 @@ public class ToolBoomstickItem extends ModifiableCrossbowItem {
         super(properties, toolDefinition);
 
 
-        //   (PartMaterialType.handle(ArsenalTools.boomstickHandle),
-        //          PartMaterialType.bow(ArsenalTools.boomstickBarrel),
-        //          PartMaterialType.head(ArsenalTools.bayonet));
+        //   (PartMaterialType.handle(ArsenalItems.boomstickHandle),
+        //          PartMaterialType.bow(ArsenalItems.boomstickBarrel),
+        //          PartMaterialType.head(ArsenalItems.bayonet));
 
 
     }
@@ -131,8 +131,8 @@ public class ToolBoomstickItem extends ModifiableCrossbowItem {
     protected List<Item> getAmmoItems() {
         if(boltMatches == null) {
             ImmutableList.Builder<Item> builder = ImmutableList.builder();
-            if(ArsenalTools.boomstickShot != null) {
-                builder.add(ArsenalTools.boomstickShot);
+            if(ArsenalItems.boomstickShot != null) {
+                builder.add(ArsenalItems.boomstickShot);
             }
             boltMatches = builder.build();
         }

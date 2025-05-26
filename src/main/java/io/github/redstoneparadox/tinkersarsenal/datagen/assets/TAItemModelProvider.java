@@ -1,7 +1,7 @@
 package io.github.redstoneparadox.tinkersarsenal.datagen.assets;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -27,12 +27,12 @@ public class TAItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        part(ArsenalTools.boomstickBarrel,"boomstick/barrel");
-        part(ArsenalTools.boomstick_stock,"boomstick/stock");
-        part(ArsenalTools.bayonet,"boomstick/bayonet");
+        part(ArsenalItems.boomstickBarrel,"boomstick/barrel");
+        part(ArsenalItems.boomstick_stock,"boomstick/stock");
+        part(ArsenalItems.bayonet,"boomstick/bayonet");
 
-        part(ArsenalTools.bullet_head,"boomstick_shot/head").offset(-2, 1);
-        part(ArsenalTools.bulletShell,"boomstick_shot/shell").offset(-2, 1);
+        part(ArsenalItems.bullet_head,"boomstick_shot/head").offset(-2, 1);
+        part(ArsenalItems.bulletShell,"boomstick_shot/shell").offset(-2, 1);
     }
 
     @SuppressWarnings("deprecation") // no its not

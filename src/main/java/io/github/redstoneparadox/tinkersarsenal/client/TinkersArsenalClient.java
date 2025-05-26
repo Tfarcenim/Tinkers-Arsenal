@@ -2,7 +2,7 @@ package io.github.redstoneparadox.tinkersarsenal.client;
 
 import io.github.redstoneparadox.tinkersarsenal.client.rendering.RenderBoomstickShot;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -35,9 +35,9 @@ public class TinkersArsenalClient {
     }
 
     static void setup(FMLClientSetupEvent event) {
-        ArsenalTools.initToolGUIs();
+        ArsenalItems.initToolGUIs();
 
-        ItemProperties.register(ArsenalTools.boomstick,PROPERTY_IS_LOADED,(pStack, pLevel, pEntity, pSeed) -> {
+        ItemProperties.register(ArsenalItems.boomstick,PROPERTY_IS_LOADED,(pStack, pLevel, pEntity, pSeed) -> {
             return 1;//todo
         });
 
@@ -75,7 +75,7 @@ public class TinkersArsenalClient {
     }
 
     private static boolean isCarryingLoadedBoomstick(Player player, InteractionHand hand) {
-        if (player.getItemInHand(hand).getItem() == ArsenalTools.boomstick) {
+        if (player.getItemInHand(hand).getItem() == ArsenalItems.boomstick) {
             return ToolBoomstickItem.isLoaded(player.getItemInHand(hand));
         }
         else {

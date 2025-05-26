@@ -2,7 +2,7 @@ package io.github.redstoneparadox.tinkersarsenal.datagen.assets;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
-import io.github.redstoneparadox.tinkersarsenal.tools.ArsenalTools;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -22,9 +22,9 @@ public class TALangProvider extends LanguageProvider {
         addModifier(ArsenalToolTraits.resilience,"Resilience","placeholder","§oTougher than Tough!§r\\nThe resilience is strong with this one.");
         addModifier(ArsenalToolTraits.diamond_edge,"Diamond Edge","placeholder","§oSo sharp!§r\\nCan better cut through armor if you hit it at just the right angle.") ;
 
-        add(ArsenalTools.boomstick_stock,"Boomstick Stock");
-        add(ArsenalTools.boomstickBarrel,"Boomstick Barrel");
-        add(ArsenalTools.bayonet,"Bayonet");
+        add(ArsenalItems.boomstick_stock,"Boomstick Stock");
+        add(ArsenalItems.boomstickBarrel,"Boomstick Barrel");
+        add(ArsenalItems.bayonet,"Bayonet");
     }
 
     void addMaterialTranslation(MaterialVariantId id,String text) {

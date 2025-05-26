@@ -2,6 +2,7 @@ package io.github.redstoneparadox.tinkersarsenal.datagen;
 
 import io.github.redstoneparadox.tinkersarsenal.datagen.assets.TAItemModelProvider;
 import io.github.redstoneparadox.tinkersarsenal.datagen.assets.TALangProvider;
+import io.github.redstoneparadox.tinkersarsenal.datagen.assets.TAToolItemModelProvider;
 import io.github.redstoneparadox.tinkersarsenal.datagen.data.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -27,6 +28,8 @@ public class TinkersArsenalDatagen {
 
         generator.addProvider(event.includeClient(),new TALangProvider(output));
         generator.addProvider(event.includeClient(),new TAItemModelProvider(output,helper));
+
+        generator.addProvider(event.includeClient(),new TAToolItemModelProvider(output,helper));
 
         generator.addProvider(event.includeServer(),new TAModifierProvider(output));
 

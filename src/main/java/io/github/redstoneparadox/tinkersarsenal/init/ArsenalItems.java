@@ -1,7 +1,6 @@
-package io.github.redstoneparadox.tinkersarsenal.tools;
+package io.github.redstoneparadox.tinkersarsenal.init;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
-import io.github.redstoneparadox.tinkersarsenal.init.TAToolDefinitions;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.AmmoBoomstickShot;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
 import io.github.redstoneparadox.tinkersarsenal.tools.utility.ToolShearsItem;
@@ -22,7 +21,7 @@ import slimeknights.tconstruct.tools.stats.LimbMaterialStats;
  * Created by RedstoneParadox on 7/31/2018.
  */
 
-public class ArsenalTools {
+public class ArsenalItems {
     private static final List<Item> TOOLS = new ArrayList<>();
     private static final List<IToolPart> TOOL_PARTS = new ArrayList<>();
 
@@ -30,9 +29,9 @@ public class ArsenalTools {
     public static AmmoBoomstickShot boomstickShot= new AmmoBoomstickShot(new Item.Properties());//needs forge
     public static ToolShearsItem shears = new ToolShearsItem(new Item.Properties().stacksTo(1));
 
-    //   (PartMaterialType.handle(ArsenalTools.boomstickHandle),
-    //          PartMaterialType.bow(ArsenalTools.boomstickBarrel),
-    //          PartMaterialType.head(ArsenalTools.bayonet));
+    //   (PartMaterialType.handle(ArsenalItems.boomstickHandle),
+    //          PartMaterialType.bow(ArsenalItems.boomstickBarrel),
+    //          PartMaterialType.head(ArsenalItems.bayonet));
 
     public static final ToolPartItem boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
     public static final ToolPartItem boomstick_stock = registerToolPart(HandleMaterialStats.ID);//cost 2
