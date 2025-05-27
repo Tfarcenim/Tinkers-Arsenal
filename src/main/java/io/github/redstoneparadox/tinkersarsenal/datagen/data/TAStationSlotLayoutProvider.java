@@ -12,23 +12,23 @@ public class TAStationSlotLayoutProvider extends AbstractStationSlotLayoutProvid
 
     @Override
     protected void addLayouts() {
-        defineModifiable(ArsenalItems.shears)
+   /*     defineModifiable(ArsenalItems.shears)
                 .sortIndex(SORT_HARVEST)
                 .addInputItem(TinkerToolParts.toolBinding,    53, 22)
                 .addInputItem(TinkerToolParts.smallBlade, 33, 42)
-                .build();
+                .build();*/
 
         defineModifiable(ArsenalItems.boomstick)
                 .sortIndex(SORT_RANGED)
-                .addInputItem(ArsenalItems.boomstickBarrel,   10, 20)
-                .addInputItem(ArsenalItems.boomstick_stock,   46, 56)
-                .addInputItem(TinkerToolParts.smallBlade, 28, 38)
+                .addInputItem(ArsenalItems.boomstickBarrel,   18, 28)
+                .addInputItem(ArsenalItems.boomstick_stock,   38, 48)
+                .addInputItem(TinkerToolParts.smallBlade, 18, 48)
                 .build();
 
-        defineModifiable(ArsenalItems.boomstickShot)
+        defineModifiable(ArsenalItems.boomstick_shot)
                 .sortIndex(SORT_RANGED)
                 .addInputItem(ArsenalItems.bullet_head,   10, 20)
-                .addInputItem(ArsenalItems.bulletShell,   46, 56)
+                .addInputItem(ArsenalItems.bullet_shell,   46, 56)
                 .build();
     }
 

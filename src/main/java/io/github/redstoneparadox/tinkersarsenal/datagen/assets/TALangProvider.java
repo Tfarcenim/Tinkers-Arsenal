@@ -5,6 +5,7 @@ import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import slimeknights.tconstruct.library.client.materials.MaterialTooltipCache;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
@@ -24,10 +25,21 @@ public class TALangProvider extends LanguageProvider {
 
         add(ArsenalItems.boomstick_stock,"Boomstick Stock");
         add(ArsenalItems.boomstickBarrel,"Boomstick Barrel");
+        add(ArsenalItems.bullet_head,"Bullet Head");
+        add(ArsenalItems.bullet_shell,"Bullet Shell");
 
         add(ArsenalItems.boomstick,"Boomstick");
-        add(ArsenalItems.boomstickShot,"Boomstick Shot");
-        add(ArsenalItems.shears,"Shears");
+        add(ArsenalItems.boomstick_shot,"Boomstick Shot");
+       // add(ArsenalItems.shears,"Shears");
+        addItemDesc(ArsenalItems.boomstick,
+                "The Boomstick is a gun capable of firing powerful shots. It has to be loaded beforehand by using right click, but can be used at any moment afterwards. Uses Boomstick shots and gunpowder.");
+
+        addItemDesc(ArsenalItems.boomstick_shot,
+                "The Boomstick Shots are used as ammo for the Boomstick (alongside gunpowder). One stack provides many shots, and they can be modified as any tool.");
+    }
+
+    void addItemDesc(Item item,String value) {
+        add(item.getDescriptionId()+".description",value);
     }
 
     void addMaterialTranslation(MaterialVariantId id,String text) {

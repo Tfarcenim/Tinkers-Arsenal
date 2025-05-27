@@ -31,7 +31,7 @@ public class TAItemModelProvider extends ItemModelProvider {
         part(ArsenalItems.boomstick_stock,"boomstick/stock");
 
         part(ArsenalItems.bullet_head,"boomstick_shot/head").offset(-2, 1);
-        part(ArsenalItems.bulletShell,"boomstick_shot/shell").offset(-2, 1);
+        part(ArsenalItems.bullet_shell,"boomstick_shot/shell").offset(-2, 1);
     }
 
     @SuppressWarnings("deprecation") // no its not

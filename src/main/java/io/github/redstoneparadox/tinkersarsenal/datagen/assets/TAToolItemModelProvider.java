@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.data.AbstractToolItemModelProvider;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class TAToolItemModelProvider extends AbstractToolItemModelProvider {
         JsonObject toolBlocking = readJson(getResource("base/tool_blocking"));
         //JsonObject shieldBlocking = readJson(getResource("base/shield_blocking"));
 
-        // blocking //
+        //tool(ArsenalItems.shears, toolBlocking, "head");
 
         pulling(ArsenalItems.boomstick, toolBlocking, AmmoType.NONE, "barrel", 2, "barrel");
     }

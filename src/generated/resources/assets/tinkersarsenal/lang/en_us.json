@@ -1,9 +1,12 @@
 {
   "item.tinkersarsenal.boomstick": "Boomstick",
+  "item.tinkersarsenal.boomstick.description": "The Boomstick is a gun capable of firing powerful shots. It has to be loaded beforehand by using right click, but can be used at any moment afterwards. Uses Boomstick shots and gunpowder.",
   "item.tinkersarsenal.boomstick_barrel": "Boomstick Barrel",
   "item.tinkersarsenal.boomstick_shot": "Boomstick Shot",
+  "item.tinkersarsenal.boomstick_shot.description": "The Boomstick Shots are used as ammo for the Boomstick (alongside gunpowder). One stack provides many shots, and they can be modified as any tool.",
   "item.tinkersarsenal.boomstick_stock": "Boomstick Stock",
-  "item.tinkersarsenal.shears": "Shears",
+  "item.tinkersarsenal.bullet_head": "Bullet Head",
+  "item.tinkersarsenal.bullet_shell": "Bullet Shell",
   "material.tinkersarsenal.diamond": "Diamond",
   "modifier.tinkersarsenal.diamond_edge": "Diamond Edge",
   "modifier.tinkersarsenal.diamond_edge.description": "Â§oSo sharp!Â§r\\nCan better cut through armor if you hit it at just the right angle.",

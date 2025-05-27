@@ -49,7 +49,7 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
         define(TAToolDefinitions.BOOMSTICK_SHOT)
                 // parts
                 .module(PartStatsModule.parts()
-                        .part(ArsenalItems.bulletShell)
+                        .part(ArsenalItems.bullet_shell)
                         .part(ArsenalItems.bullet_head).build())
                 .module(defaultTwoParts)
                 // stats

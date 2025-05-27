@@ -19,8 +19,8 @@
       },
       "icon": "tinkersarsenal:boomstick_stock",
       "translation_key": "item.tinkersarsenal.boomstick_stock",
-      "x": 46,
-      "y": 56
+      "x": 28,
+      "y": 38
     },
     {
       "filter": {
@@ -28,7 +28,7 @@
       },
       "icon": "tconstruct:small_blade",
       "translation_key": "item.tconstruct.small_blade",
-      "x": 28,
+      "x": 10,
       "y": 38
     }
   ],

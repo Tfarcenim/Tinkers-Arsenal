@@ -18,8 +18,6 @@ item.bullet_shell.name=Bullet Shell
 
 #Tools
 
-item.boomstick.name=Boomstick
-item.boomstick.desc=The Boomstick is a gun capable of firing powerful shots. It has to be loaded beforehand by using right click, but can be used at any moment afterwards. Uses Boomstick shots and gunpowder.
 item.boomstick_shot.name=Boomstick Shot
 item.boomstick_shot.desc=The Boomstick Shots are used as ammo for the Boomstick (alongside gunpowder). One stack provides many shots, and they can be modified as any tool.
 item.toolshears.name=Shears

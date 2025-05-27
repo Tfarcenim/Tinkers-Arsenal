@@ -3,7 +3,7 @@ package io.github.redstoneparadox.tinkersarsenal.init;
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.AmmoBoomstickShot;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
-import io.github.redstoneparadox.tinkersarsenal.tools.utility.ToolShearsItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,6 @@ import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.LimbMaterialStats;
 
 /**
@@ -26,8 +25,8 @@ public class ArsenalItems {
     private static final List<IToolPart> TOOL_PARTS = new ArrayList<>();
 
     public static final ToolBoomstickItem boomstick = new ToolBoomstickItem(new Item.Properties().stacksTo(1), TAToolDefinitions.BOOMSTICK);//needs forge
-    public static AmmoBoomstickShot boomstickShot= new AmmoBoomstickShot(new Item.Properties());//needs forge
-    public static ToolShearsItem shears = new ToolShearsItem(new Item.Properties().stacksTo(1));
+    public static AmmoBoomstickShot boomstick_shot = new AmmoBoomstickShot(new Item.Properties());//needs forge
+   // public static ToolShearsItem shears = new ToolShearsItem(new Item.Properties().stacksTo(1));
 
     //   (PartMaterialType.handle(ArsenalItems.boomstickHandle),
     //          PartMaterialType.bow(ArsenalItems.boomstickBarrel),
@@ -36,7 +35,7 @@ public class ArsenalItems {
     public static final ToolPartItem boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
     public static final ToolPartItem boomstick_stock = registerToolPart(HandleMaterialStats.ID);//cost 2
     public static final ToolPartItem bullet_head = registerToolPart(HandleMaterialStats.ID);
-    public static final ToolPartItem bulletShell = registerToolPart(HandleMaterialStats.ID);
+    public static final ToolPartItem bullet_shell = registerToolPart(HandleMaterialStats.ID);
 
 
 
@@ -45,11 +44,11 @@ public class ArsenalItems {
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick_barrel"),() -> boomstickBarrel);
        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_stock"),() -> boomstick_stock);
         event.register(Registries.ITEM,TinkersArsenal.id("bullet_head"),() -> bullet_head);
-        event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bulletShell);
+        event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bullet_shell);
 
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick"),() -> boomstick);
-        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_shot"),() -> boomstickShot);
-        event.register(Registries.ITEM,TinkersArsenal.id("shears"),() -> shears);
+        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_shot"),() -> boomstick_shot);
+        //event.register(Registries.ITEM,TinkersArsenal.id("shears"),() -> shears);
     }
 
     protected static ToolPartItem registerToolPart(MaterialStatsId materialStatsId) {

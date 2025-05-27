@@ -1,0 +1,13 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "head":   "tinkersarsenal:item/tool/boomstick_shot/head",
+    "shell":  "tinkersarsenal:item/tool/boomstick_shot/shell"
+  },
+  "modifier_roots": [ "tinkersarsenal:item/tool/boomstick_shot/modifiers/" ],
+  "parts": [
+    { "name": "head",       "index": 0 },
+    { "name": "shell", "index": 1 }
+  ]
+}

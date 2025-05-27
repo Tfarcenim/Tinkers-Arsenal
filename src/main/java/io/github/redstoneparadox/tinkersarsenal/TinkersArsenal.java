@@ -28,8 +28,6 @@ import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.TinkerTools;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -78,13 +76,13 @@ public class TinkersArsenal {
         if (event.getTab() == TinkerToolParts.tabToolParts.get()) {
             ArsenalItems.boomstick_stock.addVariants(consumer,"");
             ArsenalItems.boomstickBarrel.addVariants(consumer,"");
-            ArsenalItems.bulletShell.addVariants(consumer,"");
+            ArsenalItems.bullet_shell.addVariants(consumer,"");
             ArsenalItems.bullet_head.addVariants(consumer,"");
         }
         if (event.getTab() == TinkerTools.tabTools.get()) {
             acceptTool(consumer,ArsenalItems.boomstick);
-            acceptTool(consumer,ArsenalItems.shears);
-            acceptTool(consumer,ArsenalItems.boomstickShot);
+          //  acceptTool(consumer,ArsenalItems.shears);
+            acceptTool(consumer,ArsenalItems.boomstick_shot);
         }
     }
 
