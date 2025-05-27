@@ -1,7 +1,5 @@
-// 1.20.1	2025-05-26T20:09:51.2659628	Tinkers' Arsenal Tool Definition Data Generator
+// 1.20.1	2025-05-27T07:54:54.9871085	Tinkers' Arsenal Tool Definition Data Generator
 165953fc61c477a041926b81712589a3c2c8e725 assets/tinkersarsenal/models/item/tool/boomstick/blocking.json
-b1f12a4de8600becba0f9816f03f6f6d24a6d3b3 assets/tinkersarsenal/models/item/tool/boomstick/blocking_1.json
-dc58a8134f0cdb03c38fed00bcf9d5edc28fbddb assets/tinkersarsenal/models/item/tool/boomstick/blocking_2.json
+f67a74f8202d0280c3c454d6f88b8b5ebd6f795a assets/tinkersarsenal/models/item/tool/boomstick/blocking_charged.json
 c6958466c40d4ed6398a640968c677a37488fb48 assets/tinkersarsenal/models/item/tool/boomstick/broken.json
-885b5f5aaf69f4afb8b9a28977d06b482f8e37ca assets/tinkersarsenal/models/item/tool/boomstick/pulling_1.json
-c6fca19599efab33b7fdfbe6044c69820b4e8357 assets/tinkersarsenal/models/item/tool/boomstick/pulling_2.json
+3a85c77934db739181170bc045f866ca960307bc assets/tinkersarsenal/models/item/tool/boomstick/charged.json

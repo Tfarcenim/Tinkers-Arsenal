@@ -5,6 +5,7 @@ import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
@@ -15,7 +16,9 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 /**
  * Created by RedstoneParadox on 6/10/2018.
@@ -37,9 +40,8 @@ public class TinkersArsenalClient {
     static void setup(FMLClientSetupEvent event) {
         ArsenalItems.initToolGUIs();
 
-        ItemProperties.register(ArsenalItems.boomstick,PROPERTY_IS_LOADED,(pStack, pLevel, pEntity, pSeed) -> {
-            return 1;//todo
-        });
+        TinkerItemProperties.registerToolProperties(ArsenalItems.boomstick);
+
 
         /*this.addPropertyOverride(PROPERTY_PULL_PROGRESS, pullProgressPropertyGetter);
         this.addPropertyOverride(PROPERTY_IS_PULLING, isPullingPropertyGetter);

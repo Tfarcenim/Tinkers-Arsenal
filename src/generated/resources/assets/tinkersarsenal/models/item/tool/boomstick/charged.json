@@ -3,11 +3,12 @@
   "parent": "tinkersarsenal:item/base/boomstick",
   "textures": {
     "blade": "tinkersarsenal:item/tool/boomstick/bayonet",
-    "barrel": "tinkersarsenal:item/tool/boomstick/barrel_1",
-    "handle": "tinkersarsenal:item/tool/boomstick/stock"
+    "barrel": "tinkersarsenal:item/tool/boomstick/barrel",
+    "handle": "tinkersarsenal:item/tool/boomstick/stock",
+    "overlay": "tinkersarsenal:item/tool/boomstick/overlay_charged"
   },
   "modifier_roots": [
-    "tinkersarsenal:item/tool/boomstick/modifiers/1/",
+    "tinkersarsenal:item/tool/boomstick/modifiers/charged/",
     "tinkersarsenal:item/tool/boomstick/modifiers/"
   ],
   "parts": [
@@ -22,6 +23,9 @@
     {
       "name": "barrel",
       "index": 2
+    },
+    {
+      "name": "overlay"
     }
   ]
 }

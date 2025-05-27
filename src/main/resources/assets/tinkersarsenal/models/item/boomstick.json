@@ -15,23 +15,7 @@
       "overrides": [
             {
                   "predicate": { "tconstruct:charging": 1 },
-                  "model": "tinkersarsenal:item/tool/boomstick/pulling_1"
-            },
-            {
-                  "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 1.0 },
-                  "model": "tinkersarsenal:item/tool/boomstick/pulling_2"
-            },
-            {
-                  "predicate": { "tconstruct:charging": 2 },
                   "model": "tinkersarsenal:item/tool/boomstick/blocking"
-            },
-            {
-                  "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.05 },
-                  "model": "tinkersarsenal:item/tool/boomstick/blocking_1"
-            },
-            {
-                  "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 1.0 },
-                  "model": "tinkersarsenal:item/tool/boomstick/blocking_2"
             },
             {
                   "predicate": { "tconstruct:broken": 1 },

@@ -1,5 +1,5 @@
 {
-  "parent": "tinkersarsenal:item/tool/boomstick/pulling_1",
+  "parent": "tinkersarsenal:item/tool/boomstick/charged",
   "display": {
     "firstperson_righthand": {
       "rotation": [

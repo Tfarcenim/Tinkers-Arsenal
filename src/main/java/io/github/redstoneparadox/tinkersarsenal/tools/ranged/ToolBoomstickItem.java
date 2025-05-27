@@ -1,5 +1,6 @@
 package io.github.redstoneparadox.tinkersarsenal.tools.ranged;
 
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,9 +9,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import slimeknights.tconstruct.library.modifiers.hook.ranged.BowAmmoModifierHook;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.item.ranged.ModifiableCrossbowItem;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
+
+import java.util.function.Predicate;
 
 /**
  * Created by RedstoneParadox on 7/31/2018.
@@ -18,8 +23,12 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 public class ToolBoomstickItem extends ModifiableCrossbowItem {
     private static final String TAG_Loaded = "Loaded";
 
+    public static final Predicate<ItemStack> BOOMSTICK_SHOT = stack -> stack.is(ArsenalItems.boomstick_shot);
+
+    public static final Predicate<ItemStack> GUNPOWDER = stack -> stack.is(Items.GUNPOWDER);
+
     public ToolBoomstickItem(Properties properties, ToolDefinition toolDefinition) {
-        super(properties, toolDefinition);
+        super(properties, toolDefinition,BOOMSTICK_SHOT);
 
 
         //   (PartMaterialType.handle(ArsenalItems.boomstickHandle),
@@ -82,7 +91,8 @@ public class ToolBoomstickItem extends ModifiableCrossbowItem {
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.NONE;
+        // crossbow is superhardcoded to crossbows, so use none and rely on the model
+        return BlockingModifier.blockWhileCharging(ToolStack.from(stack), UseAnim.NONE);
     }
 
     @Override
@@ -93,7 +103,11 @@ public class ToolBoomstickItem extends ModifiableCrossbowItem {
             return InteractionResultHolder.fail(stack);
         }
 
-        if (isLoaded(stack)/* && !ToolHelper.isBroken(stack)*/) {
+        if (!BowAmmoModifierHook.hasAmmo(tool, stack, player, GUNPOWDER)) {
+            return InteractionResultHolder.fail(stack);
+        }
+
+        if (isLoaded(stack)) {
             super.onStopUsing(stack, player, 0);
             setLoaded(stack, false);
         } else {
@@ -104,6 +118,13 @@ public class ToolBoomstickItem extends ModifiableCrossbowItem {
 
     @Override
     public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
+        if (entity instanceof Player player) {
+            ItemStack stack1 = findGunpowder(player);
+            if (!player.getAbilities().instabuild) {
+                stack1.shrink(1);
+            }
+        }
+
         super.onStopUsing(stack, entity, count);
     }
 
