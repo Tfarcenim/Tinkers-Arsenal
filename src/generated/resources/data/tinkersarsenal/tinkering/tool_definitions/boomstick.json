@@ -3,8 +3,8 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tinkersarsenal:boomstick_stock",
         "tinkersarsenal:boomstick_barrel",
+        "tinkersarsenal:boomstick_stock",
         "tconstruct:small_blade"
       ],
       "primary_part": 0

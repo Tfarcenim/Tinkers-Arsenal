@@ -26,7 +26,7 @@ import java.util.function.Consumer;
 public class ToolShearsItem extends ModifiableItem {
 
     public ToolShearsItem(Properties properties) {
-        super(properties,TAToolDefinitions.SHEARS); //PartMaterialType.handle(TinkerTools.binding), PartMaterialType.head(TinkerTools.knifeBlade));
+        super(properties,null/*TAToolDefinitions.SHEARS*/); //PartMaterialType.handle(TinkerTools.binding), PartMaterialType.head(TinkerTools.knifeBlade));
     }
 
 }

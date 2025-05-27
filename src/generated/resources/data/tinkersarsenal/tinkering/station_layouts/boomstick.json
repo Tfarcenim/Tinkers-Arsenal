@@ -10,8 +10,8 @@
       },
       "icon": "tinkersarsenal:boomstick_barrel",
       "translation_key": "item.tinkersarsenal.boomstick_barrel",
-      "x": 10,
-      "y": 20
+      "x": 18,
+      "y": 28
     },
     {
       "filter": {
@@ -19,8 +19,8 @@
       },
       "icon": "tinkersarsenal:boomstick_stock",
       "translation_key": "item.tinkersarsenal.boomstick_stock",
-      "x": 28,
-      "y": 38
+      "x": 38,
+      "y": 48
     },
     {
       "filter": {
@@ -28,8 +28,8 @@
       },
       "icon": "tconstruct:small_blade",
       "translation_key": "item.tconstruct.small_blade",
-      "x": 10,
-      "y": 38
+      "x": 18,
+      "y": 48
     }
   ],
   "sortIndex": 8,

@@ -27,8 +27,8 @@ public class TAStationSlotLayoutProvider extends AbstractStationSlotLayoutProvid
 
         defineModifiable(ArsenalItems.boomstick_shot)
                 .sortIndex(SORT_RANGED)
-                .addInputItem(ArsenalItems.bullet_head,   10, 20)
-                .addInputItem(ArsenalItems.bullet_shell,   46, 56)
+                .addInputItem(ArsenalItems.bullet_head,   38, 20)
+                .addInputItem(ArsenalItems.bullet_shell,   18, 40)
                 .build();
     }
 

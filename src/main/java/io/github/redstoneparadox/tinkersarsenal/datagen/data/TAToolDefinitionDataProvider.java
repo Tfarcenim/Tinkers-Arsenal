@@ -33,8 +33,8 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
         define(TAToolDefinitions.BOOMSTICK)
                 // parts
                 .module(PartStatsModule.parts()
-                        .part(ArsenalItems.boomstick_stock)
                         .part(ArsenalItems.boomstickBarrel)
+                        .part(ArsenalItems.boomstick_stock)
                         .part(TinkerToolParts.smallBlade).build())
                 .module(defaultThreeParts)
                 // stats
@@ -49,8 +49,9 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
         define(TAToolDefinitions.BOOMSTICK_SHOT)
                 // parts
                 .module(PartStatsModule.parts()
+                        .part(ArsenalItems.bullet_head)
                         .part(ArsenalItems.bullet_shell)
-                        .part(ArsenalItems.bullet_head).build())
+                        .build())
                 .module(defaultTwoParts)
                 // stats
                 .module(new SetStatsModule(StatsNBT.builder()
@@ -61,7 +62,7 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
                 .smallToolStartingSlots();
 
         // shears
-        define(TAToolDefinitions.SHEARS)
+        /*define(TAToolDefinitions.SHEARS)
                 // parts
                 .module(PartStatsModule.parts()
                         .part(TinkerToolParts.toolBinding.get())
@@ -73,7 +74,7 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
                         .set(ToolStats.ATTACK_SPEED, 1.0f).build()))
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
                         .set(ToolStats.DURABILITY, 2f).build()))
-                .smallToolStartingSlots();
+                .smallToolStartingSlots();*/
     }
 
     @Override

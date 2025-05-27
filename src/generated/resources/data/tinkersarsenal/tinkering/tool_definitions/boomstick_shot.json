@@ -3,8 +3,8 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tinkersarsenal:bullet_shell",
-        "tinkersarsenal:bullet_head"
+        "tinkersarsenal:bullet_head",
+        "tinkersarsenal:bullet_shell"
       ],
       "primary_part": 0
     },

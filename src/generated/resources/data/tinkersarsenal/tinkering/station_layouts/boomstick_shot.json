@@ -10,7 +10,7 @@
       },
       "icon": "tinkersarsenal:bullet_head",
       "translation_key": "item.tinkersarsenal.bullet_head",
-      "x": 10,
+      "x": 38,
       "y": 20
     },
     {
@@ -19,8 +19,8 @@
       },
       "icon": "tinkersarsenal:bullet_shell",
       "translation_key": "item.tinkersarsenal.bullet_shell",
-      "x": 46,
-      "y": 56
+      "x": 18,
+      "y": 40
     }
   ],
   "sortIndex": 8,
