@@ -33,7 +33,7 @@ public class TAItemTagsProvider extends ItemTagsProvider {
         tag(TinkerTags.Items.MULTIPART_TOOL).add(ArsenalItems.shears, ArsenalItems.boomstick, ArsenalItems.boomstickShot);
         tag(TinkerTags.Items.RANGED).add(ArsenalItems.boomstick);
         tag(TinkerTags.Items.SMALL_TOOLS).add(ArsenalItems.shears);
-        tag(TinkerTags.Items.TOOL_PARTS).add(ArsenalItems.bayonet, ArsenalItems.boomstickBarrel, ArsenalItems.boomstick_stock,
+        tag(TinkerTags.Items.TOOL_PARTS).add( ArsenalItems.boomstickBarrel, ArsenalItems.boomstick_stock,
                 ArsenalItems.bullet_head, ArsenalItems.bulletShell);
     }
 }

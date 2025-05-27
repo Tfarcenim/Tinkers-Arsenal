@@ -24,10 +24,10 @@
     },
     {
       "filter": {
-        "item": "tinkersarsenal:bayonet"
+        "item": "tconstruct:small_blade"
       },
-      "icon": "tinkersarsenal:bayonet",
-      "translation_key": "item.tinkersarsenal.bayonet",
+      "icon": "tconstruct:small_blade",
+      "translation_key": "item.tconstruct.small_blade",
       "x": 28,
       "y": 38
     }

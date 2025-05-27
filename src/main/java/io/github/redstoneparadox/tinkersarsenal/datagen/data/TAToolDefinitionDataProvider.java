@@ -35,7 +35,7 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
                 .module(PartStatsModule.parts()
                         .part(ArsenalItems.boomstick_stock)
                         .part(ArsenalItems.boomstickBarrel)
-                        .part(ArsenalItems.bayonet).build())
+                        .part(TinkerToolParts.smallBlade).build())
                 .module(defaultThreeParts)
                 // stats
                 .module(new SetStatsModule(StatsNBT.builder()

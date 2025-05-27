@@ -1,14 +1,14 @@
 {
   "loader": "tconstruct:tool",
-  "parent": "tconstruct:item/base/swasher",
+  "parent": "tinkersarsenal:item/base/boomstick",
   "textures": {
-    "blade": "tconstruct:item/tool/swasher/blade",
-    "barrel": "tconstruct:item/tool/swasher/barrel_2",
-    "handle": "tconstruct:item/tool/swasher/handle"
+    "blade": "tinkersarsenal:item/tool/boomstick/bayonet",
+    "barrel": "tinkersarsenal:item/tool/boomstick/barrel_2",
+    "handle": "tinkersarsenal:item/tool/boomstick/stock"
   },
   "modifier_roots": [
-    "tconstruct:item/tool/swasher/modifiers/2/",
-    "tconstruct:item/tool/swasher/modifiers/"
+    "tinkersarsenal:item/tool/boomstick/modifiers/2/",
+    "tinkersarsenal:item/tool/boomstick/modifiers/"
   ],
   "parts": [
     {
@@ -22,12 +22,6 @@
     {
       "name": "barrel",
       "index": 2
-    }
-  ],
-  "first_modifiers": [
-    {
-      "name": "tconstruct:tank",
-      "forced": true
     }
   ]
 }

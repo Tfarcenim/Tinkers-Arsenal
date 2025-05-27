@@ -35,7 +35,6 @@ public class ArsenalItems {
 
     public static final ToolPartItem boomstickBarrel = registerToolPart(LimbMaterialStats.ID);//cost 3
     public static final ToolPartItem boomstick_stock = registerToolPart(HandleMaterialStats.ID);//cost 2
-    public static final ToolPartItem bayonet = registerToolPart(HeadMaterialStats.ID); //cost 2
     public static final ToolPartItem bullet_head = registerToolPart(HandleMaterialStats.ID);
     public static final ToolPartItem bulletShell = registerToolPart(HandleMaterialStats.ID);
 
@@ -45,7 +44,6 @@ public class ArsenalItems {
     public static void initToolParts(RegisterEvent event) {
         event.register(Registries.ITEM,TinkersArsenal.id("boomstick_barrel"),() -> boomstickBarrel);
        event.register(Registries.ITEM,TinkersArsenal.id("boomstick_stock"),() -> boomstick_stock);
-        event.register(Registries.ITEM,TinkersArsenal.id("bayonet"), () -> bayonet);
         event.register(Registries.ITEM,TinkersArsenal.id("bullet_head"),() -> bullet_head);
         event.register(Registries.ITEM,TinkersArsenal.id("bullet_shell"), () -> bulletShell);
 

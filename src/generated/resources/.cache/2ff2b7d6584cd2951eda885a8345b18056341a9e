@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-25T21:07:26.8864191	Tags for minecraft:item mod id tinkersarsenal
+// 1.20.1	2025-05-26T20:16:46.7146589	Tags for minecraft:item mod id tinkersarsenal
 fe9ccdb8acffdcc6d813a4176f776b6a8fdd637b data/forge/tags/items/shears.json
 36909b2fbbdf9f618c1d9737a91787e1cd4bc8f6 data/tconstruct/tags/items/modifiable/bonus_slots.json
 b0bf1eb0d331dbf5dce55296bdd8568d980ee334 data/tconstruct/tags/items/modifiable/durability.json
@@ -7,4 +7,4 @@ fe9ccdb8acffdcc6d813a4176f776b6a8fdd637b data/tconstruct/tags/items/modifiable/i
 ec0bd33cc509b311dbdaf51a0f06c315c72236b2 data/tconstruct/tags/items/modifiable/multipart.json
 3f3e5f81c681e7c3ff7ebc41652fe6fafbb6ea62 data/tconstruct/tags/items/modifiable/ranged.json
 fe9ccdb8acffdcc6d813a4176f776b6a8fdd637b data/tconstruct/tags/items/modifiable/small.json
-40dff74c72f6241545cb389da5381bdadac95207 data/tconstruct/tags/items/parts.json
+e3e2ebc1131400b7eb1bf2b9b88a9b3d6f18161a data/tconstruct/tags/items/parts.json

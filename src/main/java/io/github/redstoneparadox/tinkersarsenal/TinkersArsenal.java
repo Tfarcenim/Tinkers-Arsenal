@@ -78,7 +78,6 @@ public class TinkersArsenal {
         if (event.getTab() == TinkerToolParts.tabToolParts.get()) {
             ArsenalItems.boomstick_stock.addVariants(consumer,"");
             ArsenalItems.boomstickBarrel.addVariants(consumer,"");
-            ArsenalItems.bayonet.addVariants(consumer,"");
             ArsenalItems.bulletShell.addVariants(consumer,"");
             ArsenalItems.bullet_head.addVariants(consumer,"");
         }

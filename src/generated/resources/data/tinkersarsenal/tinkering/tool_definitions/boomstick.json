@@ -5,7 +5,7 @@
       "parts": [
         "tinkersarsenal:boomstick_stock",
         "tinkersarsenal:boomstick_barrel",
-        "tinkersarsenal:bayonet"
+        "tconstruct:small_blade"
       ],
       "primary_part": 0
     },
