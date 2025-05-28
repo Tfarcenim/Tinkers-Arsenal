@@ -24,10 +24,9 @@ public class TAItemTagsProvider extends ItemTagsProvider {
 
         tag(TinkerTags.Items.BONUS_SLOTS).add(ArsenalItems.boomstick, ArsenalItems.boomstick_shot);
 
-        tag(TinkerTags.Items.DURABILITY).add(ArsenalItems.boomstick);
+        tag(TinkerTags.Items.DURABILITY).add(ArsenalItems.boomstick,ArsenalItems.boomstick_shot);
         //tag(TinkerTags.Items.HARVEST_PRIMARY).add(Arse);
      //   tag(TinkerTags.Items.INTERACTABLE_RIGHT).add(ArsenalItems.shears);
-
 
         tag(TinkerTags.Items.MULTIPART_TOOL).add(ArsenalItems.boomstick, ArsenalItems.boomstick_shot);
         tag(TinkerTags.Items.RANGED).add(ArsenalItems.boomstick);

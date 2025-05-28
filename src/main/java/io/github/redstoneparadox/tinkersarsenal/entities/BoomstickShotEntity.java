@@ -1,6 +1,11 @@
 package io.github.redstoneparadox.tinkersarsenal.entities;
 
-import io.netty.buffer.ByteBuf;
+import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
+import io.github.redstoneparadox.tinkersarsenal.tools.ranged.BoomstickShotItem;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,8 +21,8 @@ import net.minecraft.world.phys.EntityHitResult;
  */
 public class BoomstickShotEntity extends AbstractArrow {
     // animation
-    public int roll = 0;
-    public int rollSpeed = 80;
+    private static final EntityDataAccessor<ItemStack> DATA_ITEM = SynchedEntityData.defineId(BoomstickShotEntity.class, EntityDataSerializers.ITEM_STACK);
+
 
     public BoomstickShotEntity(EntityType<? extends BoomstickShotEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -27,10 +32,38 @@ public class BoomstickShotEntity extends AbstractArrow {
         super(pEntityType,d2, d, d1, world);
     }
 
-    public static BoomstickShotEntity fire(EntityType<? extends BoomstickShotEntity> pEntityType, Level world, Player player,
-                                           float speed, float inaccuracy, float power, ItemStack stack, ItemStack launchingStack) {
-        return null;
-        //super(pEntityType,world, player, speed, inaccuracy, power, stack, launchingStack);
+    public BoomstickShotEntity(Level pLevel, LivingEntity pShooter,ItemStack ammo) {
+        super(ArsenalEntities.BOOMSTICK_SHOT, pShooter, pLevel);
+        setItem(ammo);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.getEntityData().define(DATA_ITEM, ItemStack.EMPTY);
+    }
+
+    /**
+     * Gets the item that this entity represents.
+     */
+    public ItemStack getItem() {
+        return this.getEntityData().get(DATA_ITEM);
+    }
+
+    /**
+     * Sets the item that this entity represents.
+     */
+    public void setItem(ItemStack pStack) {
+        this.getEntityData().set(DATA_ITEM, pStack);
+    }
+
+    @Override
+    public void onSyncedDataUpdated(EntityDataAccessor<?> pKey) {
+        super.onSyncedDataUpdated(pKey);
+        if (DATA_ITEM.equals(pKey)) {
+            this.getItem().setEntityRepresentation(this);
+        }
+
     }
 
     @Override
@@ -43,12 +76,65 @@ public class BoomstickShotEntity extends AbstractArrow {
     }
 
     @Override
+    public void addAdditionalSaveData(CompoundTag pCompound) {
+        if (!this.getItem().isEmpty()) {
+            pCompound.put("Item", this.getItem().save(new CompoundTag()));
+        }
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        CompoundTag compoundtag = pCompound.getCompound("Item");
+        this.setItem(ItemStack.of(compoundtag));
+        if (this.getItem().isEmpty()) {
+            this.discard();
+        }
+    }
+
+    @Override
     protected void onHitBlock(BlockHitResult pResult) {
         super.onHitBlock(pResult);
     }
 
     //        this.playSound(SoundEvents.ENTITY_SHULKER_HURT_CLOSED, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
 
+    @Override
+    protected boolean tryPickup(Player player) {
+        if (pickup == Pickup.ALLOWED) {
+            ItemStack stack = getItem();
+            if (stack.getItem() instanceof BoomstickShotItem) {
+                for (int i = 0;i < player.getInventory().getContainerSize(); i++) {
+                    ItemStack other = player.getInventory().getItem(i);
+                    if (areMergable(other,stack)) {
+                        if (other.isDamaged()) {
+                            other.setDamageValue(other.getDamageValue() - 1);
+                            discard();
+                            return true;
+                        }
+                    }
+                }
+            }
+            return super.tryPickup(player);
+        } else {
+            return super.tryPickup(player);
+        }
+    }
+
+    static boolean areMergable(ItemStack stackA,ItemStack stackB) {
+        if (!stackA.hasTag() || !stackB.hasTag()) {
+            return false;
+        }
+
+        ItemStack stackACopy = stackA.copy();
+        stackACopy.getTag().remove(ItemStack.TAG_DAMAGE);
+
+        ItemStack stackBCopy = stackB.copy();
+        stackBCopy.getTag().remove(ItemStack.TAG_DAMAGE);
+        return ItemStack.isSameItemSameTags(stackACopy,stackBCopy);
+    }
 
    /* @Override
     public void readSpawnData(ByteBuf data) {
@@ -61,6 +147,6 @@ public class BoomstickShotEntity extends AbstractArrow {
 
     @Override
     protected ItemStack getPickupItem() {
-        return ItemStack.EMPTY;
+        return getItem();
     }
 }

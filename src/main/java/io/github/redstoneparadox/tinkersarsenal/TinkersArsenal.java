@@ -6,6 +6,7 @@ import io.github.redstoneparadox.tinkersarsenal.init.ArsenalEntities;
 import io.github.redstoneparadox.tinkersarsenal.materials.ArsenalToolMaterials;
 import io.github.redstoneparadox.tinkersarsenal.misc.ArsenalSounds;
 import io.github.redstoneparadox.tinkersarsenal.init.ArsenalItems;
+import io.github.redstoneparadox.tinkersarsenal.tools.ranged.BoomstickShotItem;
 import io.github.redstoneparadox.tinkersarsenal.traits.ArsenalToolTraits;
 import io.github.redstoneparadox.tinkersarsenal.traits.tooltraits.ResilienceModifier;
 import io.github.redstoneparadox.tinkersarsenal.traits.tooltraits.DiamondEdgeModifier;
@@ -13,8 +14,12 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -44,6 +49,7 @@ public class TinkersArsenal {
         bus.addListener(TinkersArsenalDatagen::gather);
         bus.addListener(this::modifierRegister);
         bus.addListener(this::creativeTabs);
+        MinecraftForge.EVENT_BUS.addListener(this::pickup);
         ArsenalToolMaterials.initToolMaterials();
 
         if (FMLEnvironment.dist.isClient()) {
@@ -54,6 +60,12 @@ public class TinkersArsenal {
             //  ArsenalArmorTraits.initArmorTraits();
             // ArsenalArmorMaterials.initArmorMaterials();
         }
+    }
+
+    void pickup(EntityItemPickupEvent event) {
+        ItemEntity item = event.getItem();
+        Player player = event.getEntity();
+
     }
 
     void modifierRegister(ModifierManager.ModifierRegistrationEvent event) {

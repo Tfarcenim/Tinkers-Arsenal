@@ -58,7 +58,7 @@ public class TAToolDefinitionDataProvider extends AbstractToolDefinitionDataProv
                         .set(ToolStats.ATTACK_DAMAGE, 0f)
                         .set(ToolStats.ATTACK_SPEED, 1.0f).build()))
                 .module(new MultiplyStatsModule(MultiplierNBT.builder()
-                        .set(ToolStats.DURABILITY, 2f).build()))
+                        .set(ToolStats.DURABILITY, 64).build()))
                 .smallToolStartingSlots();
 
         // shears

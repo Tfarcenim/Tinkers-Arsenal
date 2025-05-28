@@ -11,5 +11,6 @@ public class ArsenalEntities {
 
     public static final EntityType<BoomstickShotEntity> BOOMSTICK_SHOT = EntityType.Builder.<BoomstickShotEntity>of(BoomstickShotEntity::new, MobCategory.MISC)
             .updateInterval(1)
+            .sized(.125f,.125f)
             .build("");
 }

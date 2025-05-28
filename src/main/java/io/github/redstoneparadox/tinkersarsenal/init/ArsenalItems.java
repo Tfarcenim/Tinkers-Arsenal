@@ -1,7 +1,7 @@
 package io.github.redstoneparadox.tinkersarsenal.init;
 
 import io.github.redstoneparadox.tinkersarsenal.TinkersArsenal;
-import io.github.redstoneparadox.tinkersarsenal.tools.ranged.AmmoBoomstickShot;
+import io.github.redstoneparadox.tinkersarsenal.tools.ranged.BoomstickShotItem;
 import io.github.redstoneparadox.tinkersarsenal.tools.ranged.ToolBoomstickItem;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class ArsenalItems {
     private static final List<IToolPart> TOOL_PARTS = new ArrayList<>();
 
     public static final ToolBoomstickItem boomstick = new ToolBoomstickItem(new Item.Properties().stacksTo(1), TAToolDefinitions.BOOMSTICK);//needs forge
-    public static AmmoBoomstickShot boomstick_shot = new AmmoBoomstickShot(new Item.Properties());//needs forge
+    public static BoomstickShotItem boomstick_shot = new BoomstickShotItem(new Item.Properties().stacksTo(1));//needs forge
    // public static ToolShearsItem shears = new ToolShearsItem(new Item.Properties().stacksTo(1));
 
     //   (PartMaterialType.handle(ArsenalItems.boomstickHandle),
